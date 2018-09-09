@@ -9,6 +9,7 @@ public class ReceiveDirectLogs2 {
     // 交换器名称
     private static final String EXCHANGE_NAME = "direct_logs";
     // 路由关键字
+    //路由关键字【routingKey】不能超过255个字节（bytes）
     private static final String[] routingKeys = new String[]{"error"};
 
     public static void main(String[] argv) throws Exception {
