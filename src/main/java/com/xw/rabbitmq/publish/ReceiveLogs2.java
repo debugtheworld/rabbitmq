@@ -5,11 +5,11 @@ import com.xw.rabbitmq.hello.ConnectionUtil;
 
 import java.io.IOException;
 
-public class Work1 {
+public class ReceiveLogs2 {
     private static final String EXCHANGE_NAME = "logs";
 
     public static void main(String[] argv) throws Exception {
-        Connection connection = ConnectionUtil.getConnection();
+        final Connection connection = ConnectionUtil.getConnection();
         Channel channel = connection.createChannel();
 
         channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
@@ -29,5 +29,18 @@ public class Work1 {
             }
         };
         channel.basicConsume(queueName, true, consumer);
+    }
+
+    /**
+     * 任务处理
+     *
+     * @param task void
+     */
+    private static void doWork(String task) {
+        try {
+            Thread.sleep(2000); // 暂停1秒钟
+        } catch (InterruptedException _ignored) {
+            Thread.currentThread().interrupt();
+        }
     }
 }

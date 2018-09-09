@@ -5,7 +5,7 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.MessageProperties;
 import com.xw.rabbitmq.hello.ConnectionUtil;
 
-public class NewTask {
+public class EmitLog {
     private static final String EXCHANGE_NAME = "logs";
 
     public static void main(String[] argv) throws java.io.IOException, Exception {
