@@ -30,17 +30,4 @@ public class ReceiveLogs2 {
         };
         channel.basicConsume(queueName, true, consumer);
     }
-
-    /**
-     * 任务处理
-     *
-     * @param task void
-     */
-    private static void doWork(String task) {
-        try {
-            Thread.sleep(2000); // 暂停1秒钟
-        } catch (InterruptedException _ignored) {
-            Thread.currentThread().interrupt();
-        }
-    }
 }
