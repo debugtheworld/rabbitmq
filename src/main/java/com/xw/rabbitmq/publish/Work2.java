@@ -14,6 +14,9 @@ public class Work2 {
 
         channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
         String queueName = channel.queueDeclare().getQueue();
+
+        //绑定关系中使用的路由关键字【routingkey】是否有效取决于交换器的类型。
+        // 如果交换器是分发【fanout】类型，就会忽略路由关键字【routingkey】的作用。
         channel.queueBind(queueName, EXCHANGE_NAME, "");
 
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
