@@ -35,12 +35,16 @@ public class TopicSendDirect {
                 "lazy.brown.fox",
                 "quick.brown.fox",
                 "quick.orange.male.rabbit",
-                "lazy.orange.male.rabbit"};
+                "lazy.orange.male.rabbit",
+                "lazy."};
 //			发送消息
         for (String severity : routingKeys) {
             String message = "From " + severity + " routingKey' s message!";
             channel.basicPublish(EXCHANGE_NAME, severity, null, message.getBytes());
             System.out.println("TopicSend [x] Sent '" + severity + "':'" + message + "'");
         }
+
+        channel.close();
+        connection.close();
     }
 }
