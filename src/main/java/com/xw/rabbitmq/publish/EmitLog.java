@@ -8,7 +8,7 @@ import com.xw.rabbitmq.hello.ConnectionUtil;
 public class EmitLog {
     private static final String EXCHANGE_NAME = "logs";
 
-    public static void main(String[] argv) throws java.io.IOException, Exception {
+    public static void main(String[] argv) throws Exception {
 
         Connection connection = ConnectionUtil.getConnection();
         Channel channel = connection.createChannel();
