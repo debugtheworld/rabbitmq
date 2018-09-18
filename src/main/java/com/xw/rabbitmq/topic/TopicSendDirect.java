@@ -14,7 +14,7 @@ import com.xw.rabbitmq.hello.ConnectionUtil;
 
 //匹配交换器的匹配符
 //
-//*（星号）表示一个单词
+//*（星号）表示零个或者一个单词
 //#（井号）表示零个或者多个单词
 public class TopicSendDirect {
     private static final String EXCHANGE_NAME = "topic_logs";
@@ -36,7 +36,7 @@ public class TopicSendDirect {
                 "quick.brown.fox",
                 "quick.orange.male.rabbit",
                 "lazy.orange.male.rabbit",
-                "lazy."};
+                "lazy.",".orange.","aa.lazy.orange.elephant.bb"};
 //			发送消息
         for (String severity : routingKeys) {
             String message = "From " + severity + " routingKey' s message!";
